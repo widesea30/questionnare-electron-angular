@@ -1,0 +1,18 @@
+<div class="text-center h-100">
+    <h2 class="mt-5">{{ question }}</h2>
+    <div class="row align-items-center h-100">
+        <div class="w-100">
+            <div class="d-flex justify-content-around" style="margin-bottom: 150px;">
+                <div (click)="answered(0)">
+                    <app-ans-item icon_name="play.png" [answer_text]="answers[0]"></app-ans-item>
+                </div>
+                <div  (click)="answered(1)">
+                    <app-ans-item icon_name="search.png" [answer_text]="answers[1]"></app-ans-item>
+                </div>
+                <div (click)="answered(2)">
+                    <app-ans-item icon_name="mail.png" [answer_text]="answers[2]"></app-ans-item>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
