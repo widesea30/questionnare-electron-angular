@@ -9,7 +9,7 @@ import { StoreService } from '../service/store.service';
 })
 export class Question1Component implements OnInit {
 
-  question = 'What would you like to do?';
+  question = 'What would ",you like to do?';
   answers = ['Learn more about us', 'Search the catalog', 'Sign up for our newsletter'];
 
   constructor(private router: Router, private store: StoreService) { }
@@ -18,7 +18,7 @@ export class Question1Component implements OnInit {
   }
 
   answered(ans_idx) {
-    this.store.addAnswer({id: 0, question: this.question, answer: this.answers[ans_idx]});
+    this.store.addAnswer({id: '1', question: this.question, answer: this.answers[ans_idx]});
     this.router.navigate(['question2']);
   }
 }

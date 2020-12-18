@@ -18,7 +18,7 @@ export class Question2Component implements OnInit {
   }
 
   answered(ans_idx) {
-    this.store.addAnswer({id: 1, question: this.question, answer: this.answers[ans_idx]});
+    this.store.addAnswer({id: '2', question: this.question, answer: this.answers[ans_idx]});
     this.router.navigate(['final']);
   }
 }

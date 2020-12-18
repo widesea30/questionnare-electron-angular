@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StoreService } from '../service/store.service';
-import { writeFile } from 'fs';
+import { ElectronService } from 'ngx-electron';
+
 
 @Component({
   selector: 'app-final',
@@ -9,13 +10,11 @@ import { writeFile } from 'fs';
 })
 export class FinalComponent implements OnInit {
 
-  constructor(private store: StoreService) { }
+  constructor(private store: StoreService, private electronService: ElectronService) { }
 
   ngOnInit() {
-    console.log(this.store.getAnswers());
-    writeFile('a.txt', 'aaaa', function(err) {
-      console.log(err);
-    });
+    let answers = this.store.getAnswers();
+    this.electronService.ipcRenderer.send('write-result', answers);
   }
 
 }
